@@ -1,0 +1,81 @@
+/* Ensure the header div is styled correctly */
+.header {
+    display: contents; /* Override any default display styles */
+    position: fixed;           /* Fix the header at the top */
+    top: 0;                    /* Align to the top */
+    width: 100%;               /* Full width */
+    background-color: #333;    /* Background color */
+    color: white;              /* Text color */
+    padding: 20px;             /* Padding */
+    z-index: 1000;             /* Ensure it is on top */
+    text-align: center;        /* Center text */
+    box-sizing: border-box;    /* Include padding in width */
+}
+
+/* Adjust body to not overlap with fixed header */
+body {
+    padding-top: 80px;         /* Adjust according to header height */
+    margin: 0;                 /* Remove default margin */
+    font-family: Arial, sans-serif; /* Font style */
+    background-color: #282c34; /* Background color */
+    color: white;              /* Text color */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Container for balance */
+.balance-container {
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+/* Style for game containers */
+.game-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* Style for individual game cards */
+.game-card {
+    background-color: #3a3f47;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+/* Style for images within game cards */
+.game-card img {
+    width: 100px;
+    height: 100px;
+}
+
+/* Style for game titles */
+.game-card h2 {
+    margin: 10px 0;
+}
+
+/* Style for buttons within game cards */
+.game-card button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #61dafb;
+    color: #282c34;
+    transition: background-color 0.2s;
+}
+
+/* Hover effect for buttons */
+.game-card button:hover {
+    background-color: #21a1f1;
+}
+
+/* Hover effect for game cards */
+.game-card:hover {
+    transform: scale(1.05);
+}

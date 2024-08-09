@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Betting Game</title>
+    <link rel="stylesheet" href="dice.css">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+    <div class="container">
+        <div class="controls">
+            <div class="control-group">
+                <button id="manual" class="active">Manual</button>
+                <button id="auto">Auto</button>
+            </div>
+            <div class="control-group">
+                <label>Bet Amount</label>
+                <input type="text" id="betAmount" placeholder="0.00000000">
+                <div class="bet-multipliers">
+                    <button onclick="adjustBetAmount(0.5)" class="bet-multiplier">½</button>
+                    <button onclick="adjustBetAmount(2)" class="bet-multiplier">2x</button>
+                </div>
+            </div>
+            <div class="control-group">
+                <label>No of Bet</label>
+                <input type="number" id="noofbets" value="0">
+            </div>
+            <div class="control-group">
+                <button id="betButton">Bet</button>
+            </div>
+        </div>
+        <div class="game">
+            <canvas id="betCanvas" width="500" height="150"></canvas>
+            <input type="range" id="betSlider" min="2" max="98" value="50">    
+        </div>
+        <div class="results">
+            <h3>Results</h3>
+            <div class="results-container">
+                <table id="resultsTable">
+                    <thead>
+                        <tr>
+                            <th>Bet Amout</th>
+                            <th>Multiplier</th>
+                            <th>Payout</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="dice.js"></script>
+    <script>
+        window.onload = loadHeader;
+    </script>
+
+</body>
+</html>

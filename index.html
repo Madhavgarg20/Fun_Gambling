@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Games with Maddy</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.11.0/dist/gsap.min.js"></script>
+    <style>
+        /* Custom styles if needed */
+    </style>
+    <script>
+         gsap.from(".hero-section", { opacity: 0, y: -50, duration: 1, delay: 0.5 });
+
+function scrollToGames() {
+    document.getElementById('games').scrollIntoView({ behavior: 'smooth' });
+}
+        function startGame(game) {
+    alert(`Starting ${game} game!`);
+    window.location.href = `${game}.html`;
+}
+
+function loadHeader() {
+    fetch('header.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header-placeholder').innerHTML = data;
+        })
+        .catch(error => console.error('Error loading header:', error));
+}
+
+window.onload = loadHeader;
+    </script>
+</head>
+<body class="bg-gray-900 text-white font-sans">
+    <!-- Header Section -->
+    <header class="bg-gray-800 py-8 text-center">
+        <h1 class="text-5xl font-extrabold mb-4">Welcome to Fun Games</h1>
+        <p class="text-xl">Experience the thrill of our exciting games!</p>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-r from-purple-700 via-pink-500 to-red-600 py-20 text-center">
+        <h2 class="text-4xl font-bold mb-4">Get Started Now!</h2>
+        <p class="text-lg mb-8">Choose your game and start winning!</p>
+        <button onclick="scrollToGames()" class="bg-yellow-500 text-gray-900 py-3 px-6 rounded-lg shadow-lg hover:bg-yellow-600 transition-colors duration-300">Explore Games</button>
+    </section>
+
+    <!-- Games Section -->
+    <section id="games" class="p-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="game-card bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <img src="https://play-lh.googleusercontent.com/ycb45SOcSD3xxLGqpJUXzssyhAoRcy9HPUOWGp-5j5Yj484YPutyTl9sa0WhB9lLyiE" alt="Dice Game" class="w-full h-48 object-cover">
+                <div class="p-4 text-center">
+                    <h3 class="text-2xl font-semibold mb-2">Dice Game</h3>
+                    <button onclick="startGame('dice')" class="bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600 transition-colors duration-300">Play Dice</button>
+                </div>
+            </div>
+
+            <div class="game-card bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <img src="https://play-lh.googleusercontent.com/Tni8_K1PLpX0Lkht_F22VYSie9HIZFsNTPx6rWZq4aGid9x9Q8wslGkAnhcqDHeQMno=w240-h480-rw" alt="Mines Game" class="w-full h-48 object-cover">
+                <div class="p-4 text-center">
+                    <h3 class="text-2xl font-semibold mb-2">Mines Game</h3>
+                    <button onclick="startGame('mines')" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition-colors duration-300">Play Mines</button>
+                </div>
+            </div>
+
+            <div class="game-card bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <img src="https://cdn.prod.website-files.com/627a360c799876600d073b88/637234258a00f879f76869ba_plinko_1992x1116_banner_site-final.jpg" alt="Plinko Game" class="w-full h-48 object-cover">
+                <div class="p-4 text-center">
+                    <h3 class="text-2xl font-semibold mb-2">Plinko Game</h3>
+                    <button onclick="startGame('plinko')" class="bg-red-500 text-white py-2 px-4 rounded hover:bg-red-600 transition-colors duration-300">Play Plinko</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-800 py-4 text-center">
+        <p class="text-sm">© 2024 Fun Games. All rights reserved.</p>
+    </footer>
+
+
+</body>
+</html>

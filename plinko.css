@@ -1,0 +1,155 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    align-items: flex-start;
+    background-color: #34495e;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: #2c3e50;
+    width: 200px;
+}
+
+.control-group {
+    margin-bottom: 20px;
+}
+
+.control-group label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.control-group input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    margin-bottom: 8px;
+    background-color: #34495e;
+    color: #ecf0f1;
+}
+
+.control-group select {
+    width: 100%;
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    margin-bottom: 8px;
+    background-color: #34495e;
+    color: #ecf0f1;
+}
+
+.control-group button {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #27ae60;
+    color: #ecf0f1;
+    font-size: 16px;
+}
+
+.control-group button.bet-multiplier {
+    background-color: #2980b9;
+    margin-right: 5px;
+}
+
+.control-group button.bet-multiplier:last-child {
+    margin-right: 0;
+}
+
+.control-group button#betButton {
+    background-color: #2ecc71;
+}
+
+.bet-multipliers {
+    display: flex;
+    gap: 5px;
+}
+
+button.active {
+    background-color: #1abc9c;
+}
+
+canvas {
+    border: 2px solid #34495e;
+    background-color: #1abc9c;
+    border-radius: 8px;
+}
+
+.game {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #1e2f3d;
+    position: relative;
+}
+
+.multipliers {
+    display: flex;
+    justify-content: space-between;
+    width: 92%;
+    position: absolute;
+    bottom: 11px;
+    padding: 10px;
+}
+
+.multiplier {
+    background-color: #406181;
+    padding: 10px;
+    border-radius: 4px;
+    color: #ecf0f1;
+    text-align: center;
+    width: 40px;
+}
+
+.results {
+    padding: 20px;
+    background-color: #34495e;
+    border-radius: 8px;
+    margin-left: 20px;
+    max-height: 700px;
+    display: flex;
+    flex-direction: column;
+}
+
+.results-container {
+    overflow-y: auto;
+    max-height: 300px;
+}
+
+.results table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.results th, .results td {
+    padding: 10px;
+    border: 1px solid #ecf0f1;
+}
+
+.results th {
+    background-color: #2c3e50;
+}
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+}

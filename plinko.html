@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plinko Game</title>
+    <link rel="stylesheet" href="plinko.css">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+    <div class="container">
+        <div class="controls">
+            <div class="control-group">
+                <button id="manual" class="active">Manual</button>
+                <button id="auto">Auto</button>
+            </div>
+            <div class="control-group">
+                <label>Bet Amount</label>
+                <input type="text" id="betAmount" placeholder="0.00000000">
+                <div class="bet-multipliers">
+                    <button onclick="adjustBetAmount(0.5)" class="bet-multiplier">½</button>
+                    <button onclick="adjustBetAmount(2)" class="bet-multiplier">2x</button>
+                </div>
+            </div>
+            <div class="control-group">
+                <label>Risk</label>
+                <select id="riskLevel" onchange="updateMultipliers()">
+                    <option value="low">Low</option>
+                    <option value="medium" selected>Medium</option>
+                    <option value="high">High</option>
+                </select>
+            </div>
+            <div class="control-group">
+                <label>Rows</label>
+                <select id="rows" onchange="updateRows()">
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                </select>
+            </div>
+            <div class="control-group">
+                <label>No of Bet</label>
+                <input type="number" id="noofbets" value=0>
+            </div>
+            <div class="control-group">
+                <button id="betButton">Bet</button>
+            </div>
+        </div>
+        <div class="game">
+            <canvas id="plinkoCanvas" width="450" height="500"></canvas>
+            <div class="multipliers" id="multipliers">
+                <!-- Multipliers will be dynamically generated here -->
+            </div>
+        </div>
+        <div class="results">
+            <h3>Results</h3>
+            <div class="results-container">
+                <table id="resultsTable">
+                    <thead>
+                        <tr>
+                            <th>Ball</th>
+                            <th>Multiplier</th>
+                            <th>Payout</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="plinko.js"></script>
+    <script>
+        window.onload = loadHeader;
+    </script>
+
+</body>
+</html>
